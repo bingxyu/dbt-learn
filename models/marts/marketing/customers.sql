@@ -1,3 +1,21 @@
+/*
+{% if execute %}
+  {% if flags.FULL_REFRESH and var('allow_full_refresh', False) != True %}
+      {{ exceptions.raise_compiler_error("Full refresh is not allowed for this model unless the argument \"--vars 'allow_full_refresh: True'\" is included in the dbt run command.") }}
+  {% endif %}
+{% endif %}
+
+dbt run --full-refresh --vars 'allow_full_refresh: True'
+*/
+
+{{
+    config(
+        materialized = 'table',
+        full_refresh = false
+    )
+}}
+
+
 with
     customers as (select * from {{ ref("stg_customers") }}),
 
