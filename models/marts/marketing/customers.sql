@@ -6,11 +6,13 @@
 {% endif %}
 
 dbt run --full-refresh --vars 'allow_full_refresh: True'
+
 */
+
 
 {{
     config(
-        materialized = 'table',
+        materialized = 'table', 
         full_refresh = false
     )
 }}
