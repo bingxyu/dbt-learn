@@ -13,6 +13,8 @@ dbt run --full-refresh --vars 'allow_full_refresh: True'
 {{
     config(
         materialized = 'table', 
+        sort = 'last_name', 
+        dist = 'customer_id', 
         full_refresh = false
     )
 }}

@@ -17,6 +17,11 @@ models:
         description: Null when a customer has not yet placed an order
 
   - name: stg_customers
+    description: >
+      Lorem ipsum **dolor** sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.
     columns:
       - name: customer_id
         tests:
@@ -24,6 +29,7 @@ models:
           - not_null
 
   - name: stg_orders
+    description: '{{ doc("table_events") }}'
     columns:
       - name: order_id
         tests:
