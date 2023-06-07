@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: us_census
+    database: |
+      {%- if target.name == "default" -%} US_OPEN_CENSUS_DATA__NEIGHBORHOOD_INSIGHTS__FREE_DATASET
+      {%- elif target.name == "dev" -%} US_OPEN_CENSUS_DATA__NEIGHBORHOOD_INSIGHTS__FREE_DATASET
+      {%- elif target.name == "qa" -%} US_OPEN_CENSUS_DATA__NEIGHBORHOOD_INSIGHTS__FREE_DATASET
+      {%- elif target.name == "prod" -%} US_OPEN_CENSUS_DATA__NEIGHBORHOOD_INSIGHTS__FREE_DATASET
+      {%- else -%} invalid_database
+      {%- endif -%}
+
+    schema: public
+    tables:
+      - name: 2020_CBG_C24
+        quoting:
+          identifier: true
+      - name: usindssp20202020_METADATA_CBG_FIELD_DESCRIPTIONS
+      - name: 2020_CBG_GEOMETRY_WKT
+        quoting:
+          identifier: true
+      - name: 2020_METADATA_CBG_GEOGRAPHIC_DATA
+        quoting:
+          identifier: true
