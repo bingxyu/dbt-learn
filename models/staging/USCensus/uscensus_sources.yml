@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: us_census
+    database: US_OPEN_CENSUS_DATA__NEIGHBORHOOD_INSIGHTS__FREE_DATASET
+    schema: census
+    tables:
+      - name: 2020_CBG_C24
+      - name: usindssp20202020_METADATA_CBG_FIELD_DESCRIPTIONS
+      - name: 2020_CBG_GEOMETRY_WKT
+      - name: 2020_METADATA_CBG_GEOGRAPHIC_DATA
+      
