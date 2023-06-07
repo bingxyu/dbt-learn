@@ -22,3 +22,6 @@ sources:
       - name: 2020_METADATA_CBG_GEOGRAPHIC_DATA
         quoting:
           identifier: true
+      - name: 2020_REDISTRICTING_CBG_DATA
+        quoting:
+          identifier: true
