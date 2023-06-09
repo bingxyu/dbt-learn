@@ -36,6 +36,8 @@ models:
       marketing:
         +schema: marts
         +materialized: table
+        +snowflake_warehouse: PC_DBT_WH_LARGE
     staging:
       +schema: staging
+      +snowflake_warehouse: COMPUTE_WH
     intermediate:
