@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'jaffle_shop'
+name: 'snowflake_workshop'
 version: '1.0.0'
 config-version: 2
 
@@ -30,14 +30,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 
 models:
-  jaffle_shop:
-    +materialized: view
-    marts:
-      marketing:
-        +schema: marts
-        +materialized: table
-        +snowflake_warehouse: PC_DBT_WH_LARGE
+  snowflake_workshop:
     staging:
-      +schema: staging
-      +snowflake_warehouse: COMPUTE_WH
-    intermediate:
+      materialized: view
+      snowflake_warehouse: pc_dbt_wh
+    marts:
+      materialized: table
+      snowflake_warehouse: pc_dbt_wh_large
